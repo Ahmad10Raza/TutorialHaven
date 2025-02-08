@@ -28,7 +28,7 @@ const Gallery = ({ onImageClick }) => {
 
         const decodedToken = jwtDecode(token);
         const response = await axios.get(
-          `http://localhost:5000/api/user/${decodedToken.username}`,
+          `https://tutorial-haven-seven.vercel.app/api/user/${decodedToken.username}`,
           { headers: { Authorization: token } }
         );
 
@@ -62,7 +62,7 @@ const Gallery = ({ onImageClick }) => {
         const token = localStorage.getItem("token");
 
         const uploadResponse = await axios.post(
-          "http://localhost:5000/api/user/upload-image",
+          "https://tutorial-haven-seven.vercel.app/api/user/upload-image",
           { image: base64Image },
           { headers: { Authorization: token } }
         );
@@ -82,7 +82,7 @@ const Gallery = ({ onImageClick }) => {
       const token = localStorage.getItem("token");
       // Send request to delete image
       const deleteResponse = await axios.delete(
-        `http://localhost:5000/api/user/delete-image/${encodeURIComponent(imageUrl)}`,
+        `https://tutorial-haven-seven.vercel.app/api/user/delete-image/${encodeURIComponent(imageUrl)}`,
         { headers: { Authorization: token } }
       );
 

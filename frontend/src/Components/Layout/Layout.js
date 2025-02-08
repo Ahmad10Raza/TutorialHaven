@@ -18,7 +18,7 @@ const Layout = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:5000/api/category/get-category",
+          "https://tutorial-haven-seven.vercel.app/api/category/get-category",
           {
             headers: {
               Authorization: token,

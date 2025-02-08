@@ -10,7 +10,7 @@ const CreateCategory = () => {
   // Fetch all categories
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/category/get-category');
+      const response = await axios.get('https://tutorial-haven-seven.vercel.app/api/category/get-category');
       setCategories(response.data);
     } catch (error) {
       console.error('Error fetching categories:', error);
@@ -32,7 +32,7 @@ const CreateCategory = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/api/category/create-category', { name: name.trim() });
+      const response = await axios.post('https://tutorial-haven-seven.vercel.app/api/category/create-category', { name: name.trim() });
       setMessage(response.data.message);
       setName('');
       fetchCategories(); // Refresh the category list after adding a new one

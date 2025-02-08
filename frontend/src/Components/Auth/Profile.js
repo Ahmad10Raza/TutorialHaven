@@ -37,7 +37,7 @@ const Profile = () => {
         const username = decodedToken.username;
 
         const response = await axios.get(
-          `http://localhost:5000/api/user/${username}`,
+          `https://tutorial-haven-seven.vercel.app/api/user/${username}`,
           { headers: { Authorization: token } }
         );
 
@@ -59,7 +59,7 @@ const Profile = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:5000/api/blog/user/${userId}`,
+          `https://tutorial-haven-seven.vercel.app/api/blog/user/${userId}`,
           { headers: { Authorization: token } }
         );
 
@@ -84,7 +84,7 @@ const Profile = () => {
     if (confirmDelete) {
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`http://localhost:5000/api/blog/delete/${blogId}`, {
+        await axios.delete(`https://tutorial-haven-seven.vercel.app/api/blog/delete/${blogId}`, {
           headers: { Authorization: token },
         });
         setMessage("Blog deleted successfully!");
@@ -124,7 +124,7 @@ const Profile = () => {
       console.log(Object.keys(updateData).length !== 0);
       if (Object.keys(updateData).length !== 0) {
         const response = await axios.put(
-          `http://localhost:5000/api/user/update/${username}`,
+          `https://tutorial-haven-seven.vercel.app/api/user/update/${username}`,
           updateData,
           { headers: { Authorization: token } }
         );
@@ -176,7 +176,7 @@ const Profile = () => {
         // Update profile with the new image
         try {
           const response = await axios.put(
-            `http://localhost:5000/api/user/update/${user.username}`,
+            `https://tutorial-haven-seven.vercel.app/api/user/update/${user.username}`,
             { profilePhoto: base64Image },
             { headers: { Authorization: token } }
           );

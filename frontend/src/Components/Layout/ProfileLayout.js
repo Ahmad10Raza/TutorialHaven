@@ -22,7 +22,7 @@ const ProfileLayout = ({ children }) => {
         const username = decodedToken.username;
 
         const response = await axios.get(
-          `http://localhost:5000/api/user/${username}`,
+          `https://tutorial-haven-seven.vercel.app/api/user/${username}`,
           {
             headers: { Authorization: token },
           }
@@ -45,7 +45,7 @@ const ProfileLayout = ({ children }) => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        "http://localhost:5000/api/user/update",
+        "https://tutorial-haven-seven.vercel.app/api/user/update",
         { username: newUsername, password: newPassword },
         { headers: { Authorization: token } }
       );

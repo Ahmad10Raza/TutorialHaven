@@ -16,7 +16,7 @@ const Login = ({ toggleAuth }) => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:5000/api/user/login", formData);
+      const response = await axios.post("https://tutorial-haven-seven.vercel.app/api/user/login", formData);
       localStorage.setItem("token", response.data.token);
       navigate("/");
     } catch (err) {

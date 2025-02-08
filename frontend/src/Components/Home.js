@@ -39,7 +39,7 @@ const Home = () => {
   const fetchBlogs = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:5000/api/blog/all", {
+      const response = await axios.get("https://tutorial-haven-seven.vercel.app/api/blog/all", {
         headers: {
           Authorization: token,
         },

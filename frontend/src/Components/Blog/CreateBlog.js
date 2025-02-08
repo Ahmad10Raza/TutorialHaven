@@ -23,7 +23,7 @@ const CreateBlog = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/category/get-category"
+          "https://tutorial-haven-seven.vercel.app/api/category/get-category"
         );
         setCategories(response.data);
       } catch (error) {
@@ -69,7 +69,7 @@ const CreateBlog = () => {
       }
 
       await axios.post(
-        "http://localhost:5000/api/blog/create",
+        "https://tutorial-haven-seven.vercel.app/api/blog/create",
         {
           title: formData.title,
           description: formData.description,

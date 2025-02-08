@@ -21,7 +21,7 @@ const EditBlog = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:5000/api/blog/${id}`,
+          `https://tutorial-haven-seven.vercel.app/api/blog/${id}`,
           {
             headers: { Authorization: token },
           }
@@ -41,7 +41,7 @@ const EditBlog = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:5000/api/blog/update/${id}`,
+        `https://tutorial-haven-seven.vercel.app/api/blog/update/${id}`,
         { title, description },
         { headers: { Authorization: token } }
       );
